@@ -1,0 +1,11 @@
+@import '../../settings/variables.css';
+@import '../../settings/fonts.css';
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header a h4 {
+    font-family: 'text';
+}

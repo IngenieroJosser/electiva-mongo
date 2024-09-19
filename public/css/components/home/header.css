@@ -1,0 +1,207 @@
+@import '../../settings/fonts.css';
+@import '../../settings/variables.css';
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.3em 2em;
+    background-color: var(--bg-hover);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+header.scrolled {
+    background-color: var(--text-two);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    font-family: 'text';
+    color: var(--text);
+    text-decoration: none;
+}
+
+header h4 {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'titleForm';
+    color: var(--text);
+}
+
+/* Menú horizontal por defecto en dispositivos grandes */
+header nav {
+    display: flex; /* Mostrar flex por defecto */
+    justify-content: flex-end;
+    width: auto;
+    gap: 2em;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    padding: 0.8em 1em;
+    font-family: 'text';
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    border-bottom: 1px solid var(--color-four);
+    color: var(--text);
+    font-weight: bold;
+}
+
+/* Botones especiales dentro del menú */
+header nav ul li .btn1,
+header nav ul li .btn2 {
+    padding: 0.8em 1.2em;
+    border-radius: 25px;
+}
+
+header nav ul li .btn1 {
+    background-color: var(--bg);
+    border: 1px solid var(--color-four);
+    color: var(--text);
+}
+
+header nav ul li .btn1:hover {
+    background-color: var(--color-four);
+    color: var(--text-two);
+}
+
+header nav ul li .btn2 {
+    background-color: var(--color-five);
+    color: var(--text-two);
+    margin-left: 1em;
+}
+
+header nav ul li .btn2:hover {
+    background-color: var(--color-four);
+    color: var(--text-two);
+}
+
+/* Estilos para el botón del menú hamburguesa (oculto por defecto) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 101; /* Asegurar que el botón esté por encima del menú */
+}
+
+.menu-toggle .bar {
+    background-color: var(--text);
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilos del menú en móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 1em;
+    }
+
+    /* Ocultar el menú horizontal y mostrar el hamburguesa */
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--bg-hover);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li a {
+        padding: 1em;
+        border-bottom: 1px solid var(--text);
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Estilos más específicos para móviles pequeños */
+@media (max-width: 480px) {
+    header {
+        padding: 0.8em;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+
+    header h4 {
+        margin-left: -10.3em;
+        font-size: 1.1em;
+    }
+
+    header .menu-toggle .bar {
+        margin-left: -27.5em;
+    }
+
+    header nav ul {
+        margin-left: 7.3em;
+        width: 100%;
+        margin: 0 auto;
+        background-color: var(--color-four);
+        border-radius: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 1em;
+        padding: 0.8em;
+        text-decoration: none;
+        color: var(--text-two);
+        font-weight: bold;
+    }
+
+    header nav ul li .btn1,
+    header nav ul li .btn2 {
+        font-size: 0.9em;
+        padding: 0.6em 1.2em;
+        margin-top: 1.3em;
+    }
+}
