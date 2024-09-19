@@ -55,16 +55,16 @@
     align-items: center;
     justify-content: center;
     background-color: #07190f;
-    border-right: 3px solid #baff29;
-    border-left: 3px solid #baff29;
+    border-right: 1px solid #baff29;
+    border-left: 1px solid #baff29;
     padding: 1em 4em;
     padding-bottom: 3em;
     border-radius: 7px;
 }
 
 .user img {
-    width: 3.3em;
-    height: 3.3em;
+    width: 7.3em;
+    height: 7.3em;
     object-fit: cover;
     border-radius: 50%;
 }

@@ -11,27 +11,7 @@
     <title>Chocoencanto - Sitio Oficial</title>
 </head>
 <body>
-    <header>
-        <a href="{{ url('/') }}"><h4>@ChocóEncanto</h4></a>
-        
-        <div class="menu-toggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        
-        <nav>
-            <ul>
-                <li><a href="#">Reservas</a></li>
-                <li><a href="#">Experiencias</a></li>
-                <li><a href="https://wa.me/573232842193?text=Hola,%20Bienvenido%20a%20ChocóEncanto,%20en%20qué%20te%20puedo%20ayudar%3F" target="_blank" rel="noopener noreferrer">Atención al cliente</a></li>
-                <li><a href="{{ url('/login') }}" class='btn1'>Iniciar sesión</a></li>
-                <li><a href="{{ url('/register') }}" class='btn2'>Únete</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
+    @include('partials.header')
 
     <section class='presentation'>
         <div class="left-content">
@@ -92,7 +72,7 @@
                 </svg>
             </div>
             <span></span>
-            <p class='word-user'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima sequi dolores officia. Eius in voluptate fugit optio commodi, exercitationem deleniti esse tempore, perspiciatis amet sunt eveniet quia a facere neque.</p>
+            <p class='word-user'>Mi experiencia con ChocóEncanto fue inolvidable. Desde el momento de la reserva hasta cada actividad, todo fue perfecto. El equipo fue atento y se encargó de que disfrutara de la belleza natural del Chocó de una manera única y auténtica. Las playas, la selva y el contacto con las comunidades locales hicieron que cada día fuera una aventura increíble. Definitivamente recomiendo ChocóEncanto a cualquiera que busque una conexión profunda con la naturaleza y la cultura del Chocó.</p>
             <a class='link' href="#">Visítalo</a>
         </div>
 
@@ -106,7 +86,7 @@
                 </svg>
             </div>
             <span></span>
-            <p class='word-user'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima sequi dolores officia. Eius in voluptate fugit optio commodi, exercitationem deleniti esse tempore, perspiciatis amet sunt eveniet quia a facere neque.</p>
+            <p class='word-user'>Viajar con ChocóEncanto fue una experiencia espectacular. La belleza del Chocó es impresionante, y gracias al equipo, pude disfrutarla al máximo. La atención al detalle y la organización de todo el viaje fueron de primera clase. Si estás buscando una aventura en un paraíso natural, ChocóEncanto es la mejor opción. ¡No podría recomendarlo más!</p>
             <a class='link' href="#">Visítalo</a>
         </div>
 
@@ -120,7 +100,7 @@
                 </svg>
             </div>
             <span></span>
-            <p class='word-user'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima sequi dolores officia. Eius in voluptate fugit optio commodi, exercitationem deleniti esse tempore, perspiciatis amet sunt eveniet quia a facere neque.</p>
+            <p class='word-user'>Como empresa de tecnología, estamos acostumbrados a procesos eficientes y bien estructurados, y ChocóEncanto no nos decepcionó. Desde el proceso de reserva hasta cada excursión, la atención al cliente fue excepcional. La biodiversidad y la naturaleza del Chocó, combinadas con la excelente organización de ChocóEncanto, hicieron que nuestra experiencia fuera única. Recomendamos sus servicios para cualquier persona o empresa que quiera disfrutar de una experiencia inolvidable en el Chocó.</p>
             <a class='link' href="#">Visítalo</a>
         </div>
     </div>

@@ -12,6 +12,32 @@ header {
     background-color: var(--bg-hover);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    margin-bottom: 3em;
+}
+
+header a {
+    font-size: .8em;
+    margin-left: 1em;
+}
+
+header .menu-toggle .bar {
+    margin-left: -4.8em;
+}
+
+header nav,
+header .log-sign {
+    display: flex;
+    gap: 2em;
+}
+
+header .log-sign a,
+header nav a {
+    transition: all 0.3s ease;
+} 
+
+header .log-sign a:hover,
+header nav a:hover {
+    border-bottom: 2px solid var(--color-four);
 }
 
 header.scrolled {
@@ -32,76 +58,13 @@ header h4 {
     color: var(--text);
 }
 
-/* Menú horizontal por defecto en dispositivos grandes */
-header nav {
-    display: flex; /* Mostrar flex por defecto */
-    justify-content: flex-end;
-    width: auto;
-    gap: 2em;
-}
-
-header nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li a {
-    padding: 0.8em 1em;
-    font-family: 'text';
-    color: var(--text);
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    border-bottom: 1px solid var(--color-four);
-    color: var(--text);
-    font-weight: bold;
-}
-
-/* Botones especiales dentro del menú */
-header nav ul li .btn1,
-header nav ul li .btn2 {
-    padding: 0.8em 1.2em;
-    border-radius: 25px;
-}
-
-header nav ul li .btn1 {
-    background-color: var(--bg);
-    border: 1px solid var(--color-four);
-    color: var(--text);
-}
-
-header nav ul li .btn1:hover {
-    background-color: var(--color-four);
-    color: var(--text-two);
-}
-
-header nav ul li .btn2 {
-    background-color: var(--color-five);
-    color: var(--text-two);
-    margin-left: 1em;
-}
-
-header nav ul li .btn2:hover {
-    background-color: var(--color-four);
-    color: var(--text-two);
-}
-
-/* Estilos para el botón del menú hamburguesa (oculto por defecto) */
+/* Estilos para el botón del menú hamburguesa */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 101; /* Asegurar que el botón esté por encima del menú */
+    z-index: 101;
+    color: var(--text);
 }
 
 .menu-toggle .bar {
@@ -112,14 +75,38 @@ header nav ul li .btn2:hover {
     transition: all 0.3s ease;
 }
 
-/* Estilos del menú en móviles */
+/* Contenido del menú */
+.menu-content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.menu-content nav {
+    display: flex;
+    gap: 2em;
+}
+
+.menu-content nav a,
+.menu-content .log-sign a {
+    color: var(--text);
+}
+
+.menu-content .log-sign {
+    display: flex;
+    gap: 1em;
+}
+
+/* Menú móvil */
 @media (max-width: 768px) {
     header {
+        width: 100%;
         padding: 1em;
+        justify-content: space-between;
     }
 
     /* Ocultar el menú horizontal y mostrar el hamburguesa */
-    header nav {
+    .menu-content {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -129,21 +116,23 @@ header nav ul li .btn2:hover {
         left: 0;
         align-items: center;
         gap: 1em;
+        border-radius: 0 0 10px 10px;
     }
 
-    header nav.active {
+    .menu-content.active {
         display: flex;
     }
 
-    header nav ul {
+    .menu-content nav {
         flex-direction: column;
         width: 100%;
     }
 
-    header nav ul li a {
+    .menu-content nav a {
         padding: 1em;
         border-bottom: 1px solid var(--text);
         text-align: center;
+        color: black; /* Cambia el color del texto del menú en móviles a negro */
     }
 
     .menu-toggle {
@@ -166,40 +155,25 @@ header nav ul li .btn2:hover {
 /* Estilos más específicos para móviles pequeños */
 @media (max-width: 480px) {
     header {
+        width: 100%;
         padding: 0.8em;
     }
 
-    header nav ul li {
-        margin: 0.5em 0;
-    }
-
-    header h4 {
-        margin-left: -10.3em;
-        font-size: 1.1em;
-    }
-
-    header .menu-toggle .bar {
-        margin-left: -27.5em;
-    }
-
-    header nav ul {
-        margin-left: 7.3em;
-        width: 100%;
-        margin: 0 auto;
-        background-color: var(--color-four);
+    .menu-content nav {
+        background-color: var(--bg-hover);
         border-radius: 10px;
     }
 
-    header nav ul li a {
+    .menu-content nav a,
+    .menu-content .log-sign a {
         font-size: 1em;
         padding: 0.8em;
-        text-decoration: none;
-        color: var(--text-two);
+        color: var(--text); /* Cambia el color del texto del menú en móviles pequeños a negro */
         font-weight: bold;
     }
 
-    header nav ul li .btn1,
-    header nav ul li .btn2 {
+    .menu-content .log-sign .btn1,
+    .menu-content .log-sign .btn2 {
         font-size: 0.9em;
         padding: 0.6em 1.2em;
         margin-top: 1.3em;

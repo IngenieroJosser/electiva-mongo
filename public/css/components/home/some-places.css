@@ -20,6 +20,11 @@
 
 .places img:hover {
     opacity: 1;
+    flex-grow: 1;
+    transform: scale(1.02);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
 }
 
 /* Media Queries para Responsividad */
